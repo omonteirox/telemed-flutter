@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:telemed_app/routes/routes.dart';
 import 'package:telemed_app/theme_provider.dart';
 import 'package:telemed_app/themes/app_themes.dart';
 import 'package:telemed_app/view/home_screen.dart';
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
             theme:
                 theme.isDark ? AppThemes().darkTheme : AppThemes().whiteTheme,
             routes: {
-              '/': (BuildContext context) => LoginScreen(),
-              '/signin': (BuildContext context) => const SignInScreen(),
-              '/home': (BuildContext context) => const HomeScreen()
+              AppRoutes.HOME: (BuildContext context) => const HomeScreen(),
+              AppRoutes.LOGIN: (BuildContext context) => LoginScreen(),
+              AppRoutes.SIGNON: (BuildContext context) => const SignInScreen(),
             },
             initialRoute: '/',
           );

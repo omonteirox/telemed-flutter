@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:telemed_app/components/appbar_component.dart';
+import 'package:telemed_app/routes/routes.dart';
 import 'package:telemed_app/stores/auth_store.dart';
 import 'package:telemed_app/stores/user_store.dart';
 
@@ -162,7 +163,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       },
                                     );
                                   } else {
-                                    Navigator.pushNamed(context, '/home');
+                                    Navigator.pushNamed(
+                                        context, AppRoutes.HOME);
                                   }
                                 }
                               },
@@ -171,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/signin');
+                              Navigator.pushNamed(context, AppRoutes.SIGNON);
                             },
                             child: Text("Cadastre-se"),
                           ),
