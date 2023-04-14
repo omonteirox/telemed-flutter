@@ -100,8 +100,8 @@ class _SignInScreenState extends State<SignInScreen> {
                         Future.delayed(
                           Duration(seconds: 1),
                           () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, '/', (route) => false);
+                            Navigator.pushNamedAndRemoveUntil(context,
+                                Navigator.defaultRouteName, (route) => false);
                           },
                         );
                       }

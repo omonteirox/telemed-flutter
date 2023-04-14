@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telemed_app/routes/routes.dart';
 import 'package:telemed_app/theme_provider.dart';
 import 'package:telemed_app/themes/app_themes.dart';
+import 'package:telemed_app/view/home_screen.dart';
+import 'package:telemed_app/view/login_screen.dart';
+import 'package:telemed_app/view/singin_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,10 +18,14 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(
         builder: (context, theme, _) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'TELEMED-APP',
             theme:
                 theme.isDark ? AppThemes().darkTheme : AppThemes().whiteTheme,
-            routes: appRoutes,
+            routes: {
+              '/': (BuildContext context) => LoginScreen(),
+              '/signin': (BuildContext context) => const SignInScreen(),
+              '/home': (BuildContext context) => const HomeScreen()
+            },
             initialRoute: '/',
           );
         },
