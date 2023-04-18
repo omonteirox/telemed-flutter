@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telemed_app/animations/transition_animation.dart';
+import 'package:telemed_app/utils/animations/transition_animation.dart';
 
 class AppThemes {
   ThemeData darkTheme = ThemeData(

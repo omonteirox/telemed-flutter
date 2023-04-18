@@ -11,10 +11,14 @@ class SecureData {
   }
 
   Future<void> saveRemember(bool value) async {
-    await storage.write(key: 'rememberPassword', value: value.toString());
+    try {
+      await storage.write(key: 'rememberPassword', value: value.toString());
+    } catch (e) {
+      throw Exception("Erro ao salvar o remember");
+    }
   }
 
-  Future<void> savePassword(String password) async {
+  Future<void> savePassword(String? password) async {
     if (password != null && password.isNotEmpty) {
       await storage.write(key: 'password', value: password);
     }
@@ -26,7 +30,7 @@ class SecureData {
   }
 
   Future<void> saveData(
-      String email, String password, bool rememberPassword) async {
+      String? email, String? password, bool rememberPassword) async {
     await storage.write(key: 'email', value: email);
     await storage.write(key: 'password', value: password);
     await storage.write(key: 'isLogged', value: rememberPassword.toString());
