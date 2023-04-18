@@ -1,6 +1,7 @@
 # telemed_app
-
-A new Flutter project.
+Um projeto Flutter para a matéria de construção de sistemas.
+Atualmente estou utilizando o mobx para gerência de estado e o padrão MVC.
+Pretendo mudar para Clean architeture, mas como o projeto é robusco e está apenas no começo, vou permanecer no MVC onde tenho mais conhecimento.
 
 ## Getting Started
 
